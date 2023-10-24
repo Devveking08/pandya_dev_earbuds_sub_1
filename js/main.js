@@ -7,18 +7,22 @@
        { 
          title: "Elegant Design",
          text: "Unique and elegant design, just like Red haired shanks from one piece, When you wear it you will vibe like an emperor of sound",
+         image: "images/red-line.png",
        },
        {
          title: "Crisp and clear sound",
          text: "Crisp & clear sound necessary as world can be as unexpacted as the sea itself, so as the shanks we have to stay calm and for that we need out fav song or a meditation that u are craving for clear sound makes everything better", 
+         image: "images/red-line.png",
        },
        {
          title: "LED Lights ",
          text: "Red LED lights, All around, This red light element the for the person this earphones are dedicated to the 4 billion berry bounty man RED HAIRED SHANKS, Join the red hairs today", 
+         image: "images/red-line.png",
        },
        {
          title: "Comfort Fit ",
          text: "Everyone knows the journey of the life you wake up work leave and sleep we want everyone to listen to their fav songs while they are going through the hassles of the day and for that comfortable earbuds are must they are most comfortable and the lightest earbuds you can find in the entire grand line", 
+         image: "images/red-line.png",
        },
        
     ];
@@ -29,30 +33,34 @@
          hotspot.style.display = "block";
        });
     }
-    function clickHotspot() {
-        const index = Array.from(this.parentElement.children).indexOf(this);
-        const selected = document.querySelector(`#${this.slot}`);
-         
-        // Get the selected info box object
-        const selectedInfoBox = infoBoxes[index];
-         
-        // Created the title and text elements
-        const titleElement = document.createElement('h2');
-        titleElement.textContent = selectedInfoBox.title;
-         
-        const textElement = document.createElement('p');
-        textElement.textContent = selectedInfoBox.text;
-         
-        // Cleared the existing content
-        while (selected.firstChild) {
-           selected.removeChild(selected.firstChild);
-        }
-         
-        // Appended the title and text elements
-        selected.appendChild(titleElement);
-        selected.appendChild(textElement);
-       }
-    
+function loadInfo() {
+ infoBoxes.forEach((infoBox, index) => {
+    let selected = document.querySelector(`#hotspot-${index + 1}`);
+    if (selected) {
+       // Cleared the existing content
+           while (selected.firstChild) {
+            selected.removeChild(selected.firstChild);
+         }
+      let title = document.createElement('h2');
+      title.textContent = infoBox.title;
+      selected.appendChild(title);
+
+      let text = document.createElement('p');
+      text.textContent = infoBox.text;
+      selected.appendChild(text);
+
+      let image = document.createElement('img');
+      image.src = infoBox.image;
+      image.alt = infoBox.title;
+      selected.appendChild(image);
+
+      console.log(selected);
+      console.log(infoBox.title);
+      console.log(infoBox.text);
+      console.log(infoBox.img);
+    }
+ });
+}
 
     function showInfo() {
         const selected = document.querySelector(`#${this.slot}`);
@@ -75,6 +83,6 @@
      hotspots.forEach(function (hotspot) {
         hotspot.addEventListener("mouseover", showInfo);
         hotspot.addEventListener("mouseout", hideInfo);
-        hotspot.addEventListener("click", clickHotspot);
+        hotspot.addEventListener("click", loadInfo);
      });
     })();
