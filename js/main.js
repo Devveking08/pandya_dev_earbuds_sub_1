@@ -29,6 +29,30 @@
          hotspot.style.display = "block";
        });
     }
+    function clickHotspot() {
+        const index = Array.from(this.parentElement.children).indexOf(this);
+        const selected = document.querySelector(`#${this.slot}`);
+         
+        // Get the selected info box object
+        const selectedInfoBox = infoBoxes[index];
+         
+        // Created the title and text elements
+        const titleElement = document.createElement('h2');
+        titleElement.textContent = selectedInfoBox.title;
+         
+        const textElement = document.createElement('p');
+        textElement.textContent = selectedInfoBox.text;
+         
+        // Cleared the existing content
+        while (selected.firstChild) {
+           selected.removeChild(selected.firstChild);
+        }
+         
+        // Appended the title and text elements
+        selected.appendChild(titleElement);
+        selected.appendChild(textElement);
+       }
+    
 
     function showInfo() {
         const selected = document.querySelector(`#${this.slot}`);
