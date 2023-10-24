@@ -11,12 +11,12 @@ into the promo site.
 2. Used a combination of CSS3, Javascript and the GreenSock library to animate
 the hotspots and display information.
 3. Use an array or object or combination of both to store and retrieve the data for
-the hotspots - you must include an image of some kind.
+the hotspots, Implimeted a red-line image to add the elemet of the logo.
 
 
 # version / history
 1.0 - Pulled out code and the AR obejct, Implimented basic folder structure practice that were taught in the class, set up the sass and js at the initial phase
-2.0 - fixed issues in js, added an array in the function clickhotspot to store the data from info box var. and then to give us when we click on it.
+2.0 - fixed issues in js, added an array in the function loadinfo to store the data from info box var. and then to give us when we click on it.
 3.0 - responsive for mobile, tablet and desktop
 
 # how to use
@@ -28,6 +28,10 @@ the hotspots - you must include an image of some kind.
 # License 
 MIT
 
-# special Thanks
+# Special Thanks
 Professor Marco De Luca 
 (co-ordinator of IDP at Fanshawe School Of Digital and Performing Arts)
+
+# Creator
+
+Dev Pandya (Dev1ce)
